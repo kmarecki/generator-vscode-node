@@ -158,6 +158,7 @@ module.exports = generators.Base.extend({
             var templates = [
                 '.gitignore',
                 'tsconfig.json',
+                'typingsrc'
                 '.vscode/settings.json',
                 '.vscode/tasks.json'];
             for (template of templates) {
