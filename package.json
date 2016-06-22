@@ -2,7 +2,7 @@
   "name": "generator-vscode-node",
   "version": "0.1.0",
   "description": "Yeoman generator for Visual Code Node projects.",
-  "main": "index.js",
+  "main": "app/index.js",
   "keywords": [
     "yeoman-generator",
     "node",
