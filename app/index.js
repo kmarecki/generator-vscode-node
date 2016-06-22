@@ -83,17 +83,7 @@ module.exports = generators.Base.extend({
                     filter: function (words) {
                         return words.split(/\s*,\s*/g);
                     }
-                }/*, {
-                    name: 'babel',
-                    type: 'confirm',
-                    message: 'Use es2015 (precompiled with Babel)',
-                    when: this.options.babel === undefined
-                }, {
-                    name: 'includeCoveralls',
-                    type: 'confirm',
-                    message: 'Send coverage reports to coveralls',
-                    when: this.options.coveralls === undefined
-                }*/];
+                }];
 
             this.prompt(prompts, function (props) {
                 this.props = extend(this.props, props);
@@ -138,10 +128,6 @@ module.exports = generators.Base.extend({
                     email: this.props.authorEmail,
                     url: this.props.authorUrl
                 },
-                /*main: this.props.babel ? 'dist/index.js' : path.join(
-                  this.options.projectRoot,
-                  'index.js'
-                ),*/
                 keywords: []
             }, currentPkg);
 
