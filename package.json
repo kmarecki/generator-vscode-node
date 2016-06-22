@@ -1,8 +1,14 @@
 {
   "name": "generator-vscode-node",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Yeoman generator for Visual Code Node projects.",
   "main": "index.js",
+  "keywords": [
+    "yeoman-generator",
+    "node",
+    "vscode",
+    "typescript"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +20,6 @@
     "lodash": "^4.11.1",
     "path": "^0.12.7",
     "yeoman-generator": "^0.22.6"
-  }
+  },
+  "repository": "kmarecki/generator-vscode-node"
 }
