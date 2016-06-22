@@ -2,7 +2,7 @@
   "name": "generator-vscode-typescript",
   "version": false,
   "dependencies": {},
-  "ambientDependencies": {
+  "globalDependencies": {
     "node": "registry:dt/node#4.0.0+20160423143914",
     "yeoman-generator": "registry:dt/yeoman-generator#0.0.0+20160317120654"
   }

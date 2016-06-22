@@ -16,7 +16,6 @@ module.exports = generators.Base.extend({
             description: this.pkg.description,
             version: this.pkg.version,
             homepage: this.pkg.homepage
-            //   babel: Boolean(this.options.babel)
         };
 
         if (_.isObject(this.pkg.author)) {
@@ -135,28 +134,29 @@ module.exports = generators.Base.extend({
             if (this.props.keywords) {
                 pkg.keywords = _.uniq(this.props.keywords.concat(pkg.keywords));
             }
-
             // Let's extend package.json so we're not overwriting user previous fields
             this.fs.writeJSON(this.destinationPath('package.json'), pkg);
         },
 
         templates: function () {
+            var pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
             var templates = [
                 '.gitignore',
+                '.typingsrc',
+                '.vscode/settings.json',
+                '.vscode/tasks.json',
+                'README.md',
                 'tsconfig.json',
                 'tslint.json',
-                'typingsrc',
-                '.vscode/settings.json',
-                '.vscode/tasks.json'];
+                'typings.json',
+            ];
             for (template of templates) {
                 var src = this.templatePath(template);
                 var dest = this.destinationPath(template);
-                // this.log(`Writing ${src} to ${dest}`);
-                this.fs.copyTpl(
-                    src,
-                    dest);
+                //this.log(`Writing ${src} to ${dest}`);
+                this.fs.copyTpl(src, dest, { pkg: pkg});
             }
-        }
+        },
     },
 
     installing: function () {
